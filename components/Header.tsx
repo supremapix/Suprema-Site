@@ -7,7 +7,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -24,21 +24,23 @@ export const Header: React.FC = () => {
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
+        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md py-3' : 'bg-transparent py-4 md:py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <div className="bg-suprema-blue p-2 rounded-lg">
-            <Rocket className="text-white w-6 h-6" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <div className="flex items-center gap-2 z-50">
+          <div className="bg-suprema-blue p-2 rounded-lg shadow-lg">
+            <Rocket className="text-white w-5 h-5 md:w-6 md:h-6" />
           </div>
-          <span className={`font-bold text-xl tracking-tight ${isScrolled ? 'text-slate-900' : 'text-slate-900 md:text-white'}`}>
+          <span className={`font-bold text-xl tracking-tight transition-colors ${
+            isScrolled || isMobileMenuOpen ? 'text-slate-900' : 'text-white'
+          }`}>
             SUPREMA<span className="text-suprema-blue">SITES</span>
           </span>
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
@@ -50,46 +52,55 @@ export const Header: React.FC = () => {
               {link.name}
             </a>
           ))}
+          <a 
+            href="#planos"
+            className="bg-suprema-accent text-slate-900 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-yellow-300 transition-all hover:scale-105 shadow-lg"
+          >
+            Ver Planos
+          </a>
         </nav>
-
-        <a 
-          href="#planos"
-          className="hidden md:block bg-suprema-accent text-slate-900 px-6 py-2 rounded-full font-bold text-sm hover:bg-yellow-300 transition-transform hover:scale-105 shadow-lg"
-        >
-          Ver Planos
-        </a>
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden text-slate-700"
+          className="md:hidden z-50 p-2 focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Menu"
         >
-          {isMobileMenuOpen ? <X /> : <Menu className={isScrolled ? 'text-slate-900' : 'text-slate-900 md:text-white'} />}
+          {isMobileMenuOpen ? (
+            <X className="text-slate-900 w-7 h-7" />
+          ) : (
+            <Menu className={`w-7 h-7 ${isScrolled ? 'text-slate-900' : 'text-white'}`} />
+          )}
         </button>
       </div>
 
-      {/* Mobile Nav */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl py-4 flex flex-col items-center gap-4">
+      {/* Mobile Nav Overlay */}
+      <div 
+        className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-40 md:hidden transition-transform duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col items-center justify-center h-full gap-8 p-8">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
-              className="text-slate-800 font-medium py-2"
+              className="text-slate-800 font-bold text-2xl hover:text-suprema-blue transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
             </a>
           ))}
+          <div className="w-16 h-1 bg-gray-200 rounded-full my-4"></div>
           <a 
             href="#planos"
-            className="bg-suprema-blue text-white px-8 py-3 rounded-full font-bold"
+            className="bg-suprema-blue text-white w-full max-w-xs py-4 rounded-xl font-bold text-center text-lg shadow-xl"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Quero meu Site
           </a>
         </div>
-      )}
+      </div>
     </header>
   );
 };
