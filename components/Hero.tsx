@@ -7,8 +7,8 @@ export const Hero: React.FC = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://picsum.photos/1920/1080?grayscale&blur=2" 
-          alt="Office Background" 
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2072" 
+          alt="Desenvolvimento de Sites Background" 
           className="w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/60"></div>
@@ -62,8 +62,8 @@ export const Hero: React.FC = () => {
         <div className="hidden md:block relative">
           <div className="relative z-10 bg-gradient-to-br from-gray-800 to-gray-900 p-2 rounded-2xl shadow-2xl border border-gray-700 transform rotate-2 hover:rotate-0 transition-transform duration-500">
             <img 
-              src="https://picsum.photos/800/600" 
-              alt="Website Preview" 
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" 
+              alt="Dashboard de Site Profissional" 
               className="rounded-xl shadow-inner w-full h-auto"
             />
             
