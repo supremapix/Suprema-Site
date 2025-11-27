@@ -11,13 +11,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     
-    <!-- Canonical URL Base (será sobrescrita pelo React Helmet) -->
+    <!-- Canonical URL Base -->
     <link rel="canonical" href="https://suprema-site.vercel.app/" />
 
-    <!-- Open Graph / WhatsApp / Facebook (Defaults) -->
+    <!-- Open Graph / WhatsApp / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Suprema Sites Express">
     <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Suprema Sites Express | Seu Site Profissional em 48h">
+    <meta property="og:description" content="Criação de sites 100% GRÁTIS (pague apenas a hospedagem). Mais de 3.800 clientes satisfeitos. Tenha sua presença digital profissional hoje mesmo!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200&h=630">
     
     <!-- Configuração Tailwind e Fontes -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,26 +48,28 @@
     <style>
       html { scroll-behavior: smooth; }
       body { font-family: 'Inter', sans-serif; }
-      /* Critical CSS para evitar Layout Shift */
       .hero-placeholder { min-height: 100dvh; background-color: #0f172a; }
     </style>
     <script type="importmap">
-    {
-      "imports": {
-        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-        "react": "https://aistudiocdn.com/react@^19.2.0",
-        "react/": "https://aistudiocdn.com/react@^19.2.0/",
-        "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
-        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-        "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
-        "react-helmet-async": "https://esm.sh/react-helmet-async@2.0.4",
-        "react-router-dom": "https://esm.sh/react-router-dom@6.22.3"
-      }
-    }
-    </script>
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react-helmet-async": "https://esm.sh/react-helmet-async@2.0.4",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4"
+  }
+}
+</script>
 </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <!-- APONTANDO PARA O ARQUIVO NOVO NA PASTA SRC -->
+    <script type="module" src="./src/index.tsx"></script>
   </body>
 </html>
