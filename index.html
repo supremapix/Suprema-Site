@@ -6,10 +6,9 @@
     <title>Suprema Sites Express | Criação de Sites Profissionais em Tempo Recorde</title>
     <meta name="description" content="Especialistas em criação de sites profissionais em tempo recorde. Tenha seu site no ar em até 48h com desenvolvimento 100% GRÁTIS.">
     
-    <!-- Resource Hints para Performance Extrema -->
+    <!-- Resource Hints para Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     
     <!-- Canonical URL Base -->
     <link rel="canonical" href="https://suprema-site.vercel.app/" />
@@ -50,26 +49,23 @@
       body { font-family: 'Inter', sans-serif; }
       .hero-placeholder { min-height: 100dvh; background-color: #0f172a; }
     </style>
-    <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
-    "react-helmet-async": "https://esm.sh/react-helmet-async@2.0.4",
-    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
-    "vite": "https://aistudiocdn.com/vite@^7.2.4"
+    "react-helmet-async": "https://aistudiocdn.com/react-helmet-async@^2.0.5",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
-    <!-- APONTANDO PARA O ARQUIVO NOVO NA PASTA SRC -->
-    <script type="module" src="./src/index.tsx"></script>
+    <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>

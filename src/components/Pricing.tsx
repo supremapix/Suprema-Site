@@ -49,7 +49,7 @@ const plans: PricingPlan[] = [
     id: '60m',
     name: '48 Meses + 1 ano',
     duration: '5 Anos',
-    monthlyPrice: 27.92, // 1675.20 dividido por 60 meses
+    monthlyPrice: 27.92,
     totalPrice: 1675.20,
     installments: '12x R$ 139,60',
     features: ['Maior Economia', '1 Ano de Bônus', 'Site 100% Grátis'],
