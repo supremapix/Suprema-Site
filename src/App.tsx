@@ -11,6 +11,7 @@ import { Contact } from './components/Contact';
 import { BackToTop } from './components/ui/BackToTop';
 import { LocationPage } from './pages/LocationPage';
 import { EnhancedSEO } from './components/seo/EnhancedSEO';
+import { AIAssistant } from './components/AIAssistant';
 
 // Componente da Home Page Original
 const HomePage = () => (
@@ -28,6 +29,7 @@ const HomePage = () => (
       <Features />
       <Portfolio />
       <Testimonials />
+      <AIAssistant />
     </main>
     <Contact />
     <BackToTop />
