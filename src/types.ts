@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface PricingPlan {
   id: string;
   name: string;
@@ -23,12 +21,4 @@ export interface Step {
 export interface Client {
   name: string;
   category?: string;
-}
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'chatvolt-chatbox-standard': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-    }
-  }
 }

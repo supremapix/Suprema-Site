@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Section } from './ui/Section';
 import { ScrollReveal } from './ui/ScrollReveal';
 
 export const AIAssistant: React.FC = () => {
+  useEffect(() => {
+    // Dynamically load the ChatVolt script after the component mounts
+    // This ensures the <chatvolt-chatbox-standard> element exists in the DOM
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.textContent = `
+      import Chatbox from 'https://cdn.jsdelivr.net/npm/@chatvolt/embeds@latest/dist/chatbox/index.js';
+      Chatbox.initStandard({
+        agentId: 'cmikny8ch002ikfbpylfatiwl',
+      });
+    `;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <Section id="atendimento" bg="white">
       <ScrollReveal>
@@ -17,7 +35,10 @@ export const AIAssistant: React.FC = () => {
 
       <ScrollReveal delay={100}>
         <div className="w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-gray-50">
-          <chatvolt-chatbox-standard style={{ width: '100%', height: '650px' }} />
+          {
+            // @ts-ignore
+            <chatvolt-chatbox-standard style={{ width: '100%', height: '650px' }} />
+          }
         </div>
       </ScrollReveal>
     </Section>
